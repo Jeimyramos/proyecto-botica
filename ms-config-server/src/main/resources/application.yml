@@ -15,7 +15,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/saulytucayasi/ms-botica.git # ruta del repositorio git
+          uri: https://github.com/Jeimyramos/proyecto-botica.git # ruta del repositorio git
           searchPaths: config-data
           default-label: main
   security:
