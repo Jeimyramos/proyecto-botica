@@ -1,0 +1,70 @@
+server:
+  port: 8085
+
+eureka:
+  client:
+    serviceUrl:
+      #defaultZone: http://localhost:8090/eureka
+      defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
+  instance:
+    #hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+
+      discovery:
+        locator:
+          enable: true
+      routes:
+        - id: ms-catalogo-service
+          uri: lb://ms-catalogo-service
+          predicates:
+            - Path=/categorias/**
+          filters:
+            - AuthFilter
+        - id: ms-auth-service
+          uri: lb://ms-auth-service
+          predicates:
+            - Path=/auth/**
+        - id: ms-producto-service
+          uri: lb://ms-producto-service
+          predicates:
+            - Path=/productos/**
+          filters:
+            - AuthFilter
+        - id: ms-inventario-service
+          uri: lb://ms-inventario-service
+          predicates:
+            - Path=/inventario/**
+          filters:
+            - AuthFilter
+        - id: ms-movimientos-service
+          uri: lb://ms-movimientos-service
+          predicates:
+            - Path=/movimientos/**
+          filters:
+            - AuthFilter
+        - id: ms-carrito-service
+          uri: lb://ms-carrito-service
+          predicates:
+            - Path=/carrito/**
+          filters:
+            - AuthFilter
+        - id: ms-ventas-service
+          uri: lb://ms-ventas-service
+          predicates:
+            - Path=/ventas/**
+          filters:
+            - AuthFilter
+
