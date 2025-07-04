@@ -1,7 +1,7 @@
 package com.example.ms_compras.controller;
 
-import com.example.ms_compras.entity.Producto;
-import com.example.ms_compras.service.ProductoService;
+import com.example.ms_compras.entity.Compras;
+import com.example.ms_compras.service.ComprasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

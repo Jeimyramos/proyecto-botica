@@ -8,6 +8,6 @@ public interface ComprasService {
     List<Compras> findAll();
     Compras findById(int id);
     Compras Save(Compras compras);
-    Compraso update(Compras compras);
+    Compras update(Compras compras);
     void delete(int id);
 }
