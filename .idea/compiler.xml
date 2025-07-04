@@ -38,6 +38,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="auth-service" options="-parameters" />
       <module name="chatBot" options="-parameters" />
+      <module name="ms-compra" options="-parameters" />
+      <module name="ms-compra.main" options="-parameters" />
+      <module name="ms-compra.test" options="-parameters" />
       <module name="ms-config-server" options="-parameters" />
       <module name="ms-gateway-service" options="-parameters" />
       <module name="ms-registry-server" options="-parameters" />
